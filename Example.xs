@@ -24,3 +24,10 @@ print_hello()
 int 
 treble(x)
     int x       
+
+double
+add_numbers(double a, double b)
+    CODE:
+        RETVAL = a + b;
+    OUTPUT:
+        RETVAL

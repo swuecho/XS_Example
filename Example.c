@@ -201,6 +201,28 @@ XS_EUPXS(XS_Example_treble)
     XSRETURN(1);
 }
 
+
+XS_EUPXS(XS_Example_add_numbers); /* prototype to pass -Wmissing-prototypes */
+XS_EUPXS(XS_Example_add_numbers)
+{
+    dVAR; dXSARGS;
+    if (items != 2)
+       croak_xs_usage(cv,  "a, b");
+    {
+	double	RETVAL;
+	dXSTARG;
+	double	a = (double)SvNV(ST(0))
+;
+	double	b = (double)SvNV(ST(1))
+;
+#line 31 "Example.xs"
+        RETVAL = a + b;
+#line 221 "Example.c"
+	XSprePUSH; PUSHn((double)RETVAL);
+    }
+    XSRETURN(1);
+}
+
 #ifdef __cplusplus
 extern "C"
 #endif
@@ -223,6 +245,7 @@ XS_EXTERNAL(boot_Example)
 
         newXS("Example::print_hello", XS_Example_print_hello, file);
         newXS("Example::treble", XS_Example_treble, file);
+        newXS("Example::add_numbers", XS_Example_add_numbers, file);
 #if (PERL_REVISION == 5 && PERL_VERSION >= 9)
   if (PL_unitcheckav)
        call_list(PL_scopestack_ix, PL_unitcheckav);
