@@ -15,7 +15,7 @@ our @ISA = qw(Exporter);
 # This allows declaration	use Example ':all';
 # If you do not need this, moving things directly into @EXPORT or @EXPORT_OK
 # will save memory.
-our %EXPORT_TAGS = ( 'all' => [ qw( print_hello treble add_numbers
+our %EXPORT_TAGS = ( 'all' => [ qw( print_hello treble add_numbers treble_then_add
 	
 ) ] );
 

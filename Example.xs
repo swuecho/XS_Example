@@ -25,9 +25,17 @@ int
 treble(x)
     int x       
 
-double
-add_numbers(double a, double b)
+int
+add_numbers(int a, int b)
     CODE:
         RETVAL = a + b;
     OUTPUT:
         RETVAL
+
+int treble_then_add(int a, int b)
+    CODE:
+        RETVAL = treble(a) + treble(b);
+    OUTPUT:
+        RETVAL
+
+

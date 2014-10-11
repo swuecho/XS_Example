@@ -8,7 +8,7 @@
 use strict;
 use warnings;
 
-use Test::More tests => 4;
+use Test::More tests => 5;
 BEGIN { use_ok('Example') };
 
 #########################
@@ -19,3 +19,4 @@ is(treble(1), 3);
 print_hello();
 is(treble(2), 6);
 is(add_numbers(2,4),6);
+is(treble_then_add(2,4),18);
