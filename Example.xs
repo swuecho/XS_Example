@@ -39,3 +39,13 @@ int treble_then_add(int a, int b)
         RETVAL
 
 
+
+SV *
+add_numbers_perl(SV *a, SV *b)
+    CODE:
+    {
+	  const double sum = SvNV(a) + SvNV(b);
+	  RETVAL = newSVnv(sum);
+    }
+    
+    OUTPUT: RETVAL
