@@ -164,7 +164,7 @@ BOOTDEP =
 XS_FILES = Example.xs
 C_FILES  = Example.c
 O_FILES  = Example.o
-H_FILES  = ppport.h
+H_FILES  = 
 MAN1PODS = 
 MAN3PODS = lib/Example.pm
 
@@ -373,8 +373,6 @@ subdirs :: $(MYEXTLIB)
 config :: $(FIRST_MAKEFILE) blibdirs
 	$(NOECHO) $(NOOP)
 
-$(O_FILES): $(H_FILES)
-
 help :
 	perldoc ExtUtils::MakeMaker
 
@@ -562,8 +560,8 @@ realclean_subdirs :
 # Delete temporary files (via clean) and also delete dist files
 realclean purge ::  clean realclean_subdirs
 	- $(RM_F) \
-	  $(FIRST_MAKEFILE) $(MAKEFILE_OLD) \
-	  $(OBJECT) 
+	  $(FIRST_MAKEFILE) $(OBJECT) \
+	  $(MAKEFILE_OLD) 
 	- $(RM_RF) \
 	  $(DISTVNAME) 
 
