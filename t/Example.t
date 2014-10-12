@@ -21,3 +21,4 @@ is(treble(2), 6);
 is(add_numbers(2,4),6);
 is(treble_then_add(2,4),18);
 is(add_numbers_perl(2,4),6);
+is( get_version(), '6.0.0', 'chromaprint version is 6.0.0' );

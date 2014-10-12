@@ -7,6 +7,8 @@
 
 #include <stdio.h>
 
+#include <chromaprint.h>
+
 void print_hello (void) {
     printf("hello world");
 }
@@ -49,3 +51,10 @@ add_numbers_perl(SV *a, SV *b)
     }
     
     OUTPUT: RETVAL
+
+const char *
+get_version()
+    CODE:
+        RETVAL = chromaprint_get_version();
+    OUTPUT: RETVAL
+
