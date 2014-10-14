@@ -1,7 +1,7 @@
 use strict;
 use warnings;
 
-use Test::More tests => 7;
+use Test::More tests => 8;
 BEGIN { use_ok('Example') };
 
 #########################
@@ -15,3 +15,4 @@ is(add_numbers(2,4),6);
 is(treble_then_add(2,4),18);
 is(add_numbers_perl(2,4),6);
 is_deeply(return_1_bar, [1,'bar']);
+is_deeply(get_third_element_from_arrayref([1, 2, 3]), 3, 'get third elements');

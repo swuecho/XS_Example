@@ -23,6 +23,33 @@ AV* return_1_bar () {
   return ret;
 }
 
+/* 
+ * this example is from http://stackoverflow.com/questions/18291827/
+ */
+double get_third_element_from_arrayref( SV *abc )
+{
+    AV *array;     /* this will hold our actual array */
+    SV **value;    /* this will hold the value we extract, note that it is a double pointer */
+    double num;    /* the actual underlying number in the SV */
+
+    if ( !SvROK( abc ) ) croak( "param is not a reference" );
+    if ( SvTYPE( SvRV( abc ) ) != SVt_PVAV ) croak( "param is not an array reference" );
+
+    /* if we got this far, then we have an array ref */
+    /* now dereference it to get the AV */
+    array = (AV *)SvRV( abc );
+
+    /* look up the 3rd element, which is yet another SV */
+    value = av_fetch( array, 2, 0 );
+
+    if ( value == NULL ) croak( "Failed array lookup" );
+    //if ( !SvNOK( *value ) ) croak( "Array element is not a number" );
+
+    /* extract the actual number from the SV */
+    num = SvNV( *value );
+    return num;
+}
+
 MODULE = Example		PACKAGE = Example		
 
 void
@@ -60,3 +87,7 @@ add_numbers_perl(SV *a, SV *b)
 
 AV *
 return_1_bar()
+
+double
+get_third_element_from_arrayref(x)
+    SV *x

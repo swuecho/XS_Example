@@ -2,7 +2,5 @@ Changes
 Example.xs
 Makefile.PL
 MANIFEST
-ppport.h
-README
 t/Example.t
 lib/Example.pm
