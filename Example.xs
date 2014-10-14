@@ -3,6 +3,7 @@
 #include "perl.h"
 #include "XSUB.h"
 #include <stdio.h>
+#include <stdbool.h>
 
 void print_hello (void) {
     printf("hello world");
@@ -50,6 +51,11 @@ double get_third_element_from_arrayref( SV *abc )
     return num;
 }
 
+bool aref( SV *x )
+{
+    return  SvROK(x) && ( SvTYPE( SvRV(x) ) == SVt_PVAV );
+}
+
 MODULE = Example		PACKAGE = Example		
 
 void
@@ -90,4 +96,8 @@ return_1_bar()
 
 double
 get_third_element_from_arrayref(x)
+    SV *x
+
+bool
+aref(x)
     SV *x

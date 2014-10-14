@@ -23,6 +23,7 @@ our %EXPORT_TAGS = ( 'all' => [ qw(
         add_numbers_perl
         return_1_bar
         get_third_element_from_arrayref
+        aref
 ) ] );
 
 our @EXPORT_OK = ( @{ $EXPORT_TAGS{'all'} } );
