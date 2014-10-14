@@ -56,6 +56,11 @@ bool aref( SV *x )
     return  SvROK(x) && ( SvTYPE( SvRV(x) ) == SVt_PVAV );
 }
 
+bool href( SV *x )
+{
+    return  SvROK(x) && ( SvTYPE( SvRV(x) ) == SVt_PVHV );
+}
+
 MODULE = Example		PACKAGE = Example		
 
 void
@@ -100,4 +105,8 @@ get_third_element_from_arrayref(x)
 
 bool
 aref(x)
+    SV *x
+
+bool
+href(x)
     SV *x

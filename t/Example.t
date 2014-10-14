@@ -1,7 +1,7 @@
 use strict;
 use warnings;
 
-use Test::More tests => 12;
+use Test::More tests => 13;
 BEGIN { use_ok('Example') };
 
 #########################
@@ -20,3 +20,4 @@ is( aref([12,3]) , 1, "[12,3] is an arrrayref");
 is(aref($aref), 1, "aref is an arrrayref");
 ok(!aref(12),  "12 is not an arrrayref");
 ok(!aref({1..4}), "hashref is an arrrayref");
+ok(href({1..4}), "hashref is a hash ref");
