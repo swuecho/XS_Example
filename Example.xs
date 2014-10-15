@@ -13,6 +13,16 @@ int treble(int x) {
     return x;
 }
 
+AV* return_1_bar () {
+  AV* ret = newAV();
+
+  av_push(ret, newSViv(1));
+  av_push(ret, newSVpvf("%s", "bar"));
+
+  /* return [ 1, "bar" ] */
+  return ret;
+}
+
 MODULE = Example		PACKAGE = Example		
 
 void
@@ -46,3 +56,7 @@ add_numbers_perl(SV *a, SV *b)
     }
     
     OUTPUT: RETVAL
+
+
+AV *
+return_1_bar()

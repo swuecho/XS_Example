@@ -21,6 +21,7 @@ our %EXPORT_TAGS = ( 'all' => [ qw(
         add_numbers 
         treble_then_add
         add_numbers_perl
+        return_1_bar
 ) ] );
 
 our @EXPORT_OK = ( @{ $EXPORT_TAGS{'all'} } );
