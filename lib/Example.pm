@@ -25,6 +25,7 @@ our %EXPORT_TAGS = ( 'all' => [ qw(
         get_third_element_from_arrayref
         aref
         href
+        sref
 ) ] );
 
 our @EXPORT_OK = ( @{ $EXPORT_TAGS{'all'} } );

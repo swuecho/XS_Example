@@ -51,6 +51,11 @@ double get_third_element_from_arrayref( SV *abc )
     return num;
 }
 
+bool sref( SV *x )
+{
+    return  SvROK(x) && ( SvTYPE( SvRV(x) ) < SVt_PVAV );
+}
+
 bool aref( SV *x )
 {
     return  SvROK(x) && ( SvTYPE( SvRV(x) ) == SVt_PVAV );
@@ -102,6 +107,11 @@ return_1_bar()
 double
 get_third_element_from_arrayref(x)
     SV *x
+
+bool
+sref(x)
+    SV *x
+
 
 bool
 aref(x)
